@@ -12,3 +12,6 @@ No deadlines or estimates are committed.
 8. Confirm ISO scope before introducing evidence mapping and review workflows.
 
 Definition of done: documented behavior, tests passing, threat-model risks reviewed, no committed secrets, operational rollback documented, and production deployment explicitly approved. A documentation merge is not evidence that runtime behavior exists.
+
+## Dashboard delivery track
+Follow [the UI specification](ui-dashboard.md). Runtime work is blocked on the exact ISO coding-guideline repository: first import the applicable rules, then implement the light/dark shell, real snapshot/health/table integration, polling/freshness states, incidents, real-data charts, and optional SSE. Do not mark these features complete until the specified interaction, accessibility, security, and visual test gates pass.

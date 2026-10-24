@@ -28,3 +28,6 @@ Before implementation record number of apps, monitors per app, interval, expecte
 
 ## Exclusions
 No autonomous remediation, shell access, arbitrary scanning, enterprise compliance suite, general log lake, or billing system.
+
+## Requested dashboard UI
+See [ui-dashboard.md](ui-dashboard.md) for the full spec: light default, top-header dark-mode switch, persisted theme, screenshot-inspired operational panel grid, live/freshness status, consistent filters/time controls, health and performance panels, incidents, GitHub/AI integration states, and a safe searchable event table. UI completion includes desktop/mobile, both themes, accessibility, reconnection, stale/error states, and real-data verification. This is a specification, not implemented functionality.

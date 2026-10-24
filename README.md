@@ -8,6 +8,7 @@ Documentation-first starter repository. Private GitHub repository: https://githu
 ## Start here
 - [Architecture](docs/architecture.md)
 - [Requirements](docs/requirements.md)
+- [Live dashboard UI specification](docs/ui-dashboard.md)
 - [API proposal](docs/api.md)
 - [Data model](docs/data-model.md)
 - [Security and threat model](docs/security.md)

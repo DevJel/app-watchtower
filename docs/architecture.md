@@ -71,6 +71,28 @@ This supports evidence collection; it does not establish ISO 27001 compliance or
 
 **Not initially:** autonomous remediation, remote shell access, arbitrary network scanning, billing, full-text centralized logging, multi-region SLA claims, or a complete ISO compliance suite.
 
+## Live dashboard UI — requested addition
+
+Use the attached screenshot as a panel-layout reference, adapted to application monitoring rather than TV events. **Light mode is the default**, with a clearly labeled **Light / Dark switch in the top-right header** and a persisted preference.
+
+### Dashboard features
+- Global application/environment/status filters, search, time presets, absolute ranges, timezone, and clear-filter controls.
+- Truthful live/polling/reconnecting/paused/offline status, last successful update, manual refresh, and explicit stale/unknown states.
+- Application health matrix; latency history; traffic/error panels; failure distribution; availability timeline; incidents and alert delivery status.
+- GitHub workflow/deployment activity and optional AI usage/advisory summaries, with not-connected states until integrations exist.
+- Full-width searchable, sortable, cursor-paginated event table with safe detail views and bounded filtered exports.
+- Responsive desktop/tablet/mobile layouts, accessible chart alternatives, keyboard controls, and loading/empty/error/partial-data states in both themes.
+
+### Live-data rules
+Prefer authenticated SSE notifications when implemented, with a polling fallback proposed at 15 seconds while visible. Refresh frequency is separate from the initial five-minute probe interval. Preserve old results with a stale warning when refresh fails; missing measurements are never treated as healthy or zero. Filters and selected time ranges must reconcile across panels, drills, and exports. Demo values, if used later, must be prominently labeled and never presented as live production data.
+
+### Completion gates
+Both themes, theme persistence, ~390px mobile layout, keyboard navigation, reconnect/duplicate/cursor-gap handling, stale state, redaction, authorization, and consistent filtered totals must be tested. No unsupported actions or fabricated geographic measurements.
+
+**Implementation status:** specification added only; no dashboard code or live telemetry is implemented yet. The full build specification is in [docs/ui-dashboard.md](https://github.com/DevJel/app-watchtower/blob/main/docs/ui-dashboard.md).
+
+**Coding-guideline dependency:** the user identified an `ISO` repository, but it was not located with current GitHub access. The exact owner/repository link and applicable guideline files are required before coding. Its name is not evidence of ISO certification scope.
+
 ## Repository blueprint
 ```text
 app-watchtower/
@@ -83,6 +105,7 @@ app-watchtower/
   docs/
     architecture.md
     requirements.md
+    ui-dashboard.md
     api.md
     data-model.md
     security.md

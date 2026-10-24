@@ -11,4 +11,4 @@ The user's authoritative MCP-specific coding guidelines have not been supplied. 
 - Record architecture changes in docs/decisions.md and update tests/contracts together.
 
 ## User coding guidelines
-PENDING: paste or import the authoritative guidelines here, preserving provenance and scope.
+PENDING: the user named an `ISO` repository as the source. It was not located with current access, and `DevJel/ISO` was inaccessible. Obtain its exact owner/repository URL and guideline paths/version; then import the applicable rules here, preserving provenance and scope. The repository name must not be interpreted as proof of an ISO compliance requirement.
