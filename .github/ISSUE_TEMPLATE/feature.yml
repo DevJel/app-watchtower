@@ -1,0 +1,18 @@
+name: Feature
+description: Propose a scoped monitoring feature
+title: "[Feature] "
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome and acceptance criteria
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security, data handling, and operational impact
+  - type: textarea
+    id: verification
+    attributes:
+      label: Tests and rollback approach
