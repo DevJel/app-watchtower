@@ -1,6 +1,6 @@
 # Proposed data model
 
-Not executable SQL. Implement versioned migrations and test them against D1 before release.
+The table below is the broader proposed model, not a claim that every entity exists. The initial executable schema is [0001_initial.sql](../migrations/0001_initial.sql), covering applications, events, incidents, and audit events only; local D1 integration tests cover this slice.
 
 | Entity | Key fields and constraints |
 | --- | --- |

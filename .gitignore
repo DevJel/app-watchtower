@@ -11,3 +11,7 @@ coverage/
 *.pem
 *.key
 .DS_Store
+.worker-build/
+test-results/
+playwright-report/
+qa-screenshots/

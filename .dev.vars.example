@@ -1,0 +1,6 @@
+# Local development only. Copy to .dev.vars (ignored by Git).
+ENVIRONMENT=development
+ALLOW_DEV_AUTH=true
+# Production: omit ALLOW_DEV_AUTH. Set these via wrangler secret put:
+# ACCESS_ISSUER=https://YOUR_TEAM.cloudflareaccess.com
+# ACCESS_AUD=YOUR_APPLICATION_AUDIENCE

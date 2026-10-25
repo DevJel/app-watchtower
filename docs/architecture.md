@@ -1,5 +1,5 @@
 ## Project status
-**Project:** App Watchtower. Private planning repository: [DevJel/app-watchtower](https://github.com/DevJel/app-watchtower). This is not a running application. No Cloudflare resource, deployment, or application credential has been created.
+**Project:** App Watchtower. Private planning repository: [DevJel/app-watchtower](https://github.com/DevJel/app-watchtower). An initial dashboard and telemetry API are implemented in the repository and tested locally. No Cloudflare resource or production deployment has been created; no actual monitored applications are connected. See [implementation status](implementation.md) for exact boundaries.
 
 **Purpose:** A private control panel for monitoring your applications, APIs, GitHub delivery events, and AI-backed features.
 
@@ -89,7 +89,7 @@ Prefer authenticated SSE notifications when implemented, with a polling fallback
 ### Completion gates
 Both themes, theme persistence, ~390px mobile layout, keyboard navigation, reconnect/duplicate/cursor-gap handling, stale state, redaction, authorization, and consistent filtered totals must be tested. No unsupported actions or fabricated geographic measurements.
 
-**Implementation status:** specification added only; no dashboard code or live telemetry is implemented yet. The full build specification is in [docs/ui-dashboard.md](https://github.com/DevJel/app-watchtower/blob/main/docs/ui-dashboard.md).
+**Implementation status:** initial dashboard, polling API, D1 ingestion, and incident acknowledgement are implemented and tested locally. Production telemetry and deployment are not connected; SSE, probes, notifications, and advanced integrations remain pending. See [implementation status](implementation.md). The full build specification is in [docs/ui-dashboard.md](https://github.com/DevJel/app-watchtower/blob/main/docs/ui-dashboard.md).
 
 **Coding-guideline dependency:** the user identified an `ISO` repository, but it was not located with current GitHub access. The exact owner/repository link and applicable guideline files are required before coding. Its name is not evidence of ISO certification scope.
 
@@ -122,7 +122,7 @@ app-watchtower/
   tests/                       # Proposed unit/integration/security tests
 ```
 
-The initial package contains documentation and templates only. Source directories shown as proposed are not implemented. Add runtime code after the coding guidelines are supplied and reviewed.
+The monorepo tree above remains the longer-term blueprint. The initial implemented slice uses `src/`, `shared/`, `worker/`, `migrations/`, and `tests/` in a single package; separate probe/scheduler/queue services are not implemented. The ISO guideline source remains pending and conformance is not claimed.
 
 ## Security requirements before deployment
 - Authenticate at the origin boundary; validate Cloudflare Access tokens or equivalent trusted identity. Do not trust a client-supplied email header.

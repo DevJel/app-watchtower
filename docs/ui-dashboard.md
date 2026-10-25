@@ -1,9 +1,9 @@
 # Live monitoring dashboard specification
 
 ## Status and guideline source
-Requested addition to App Watchtower, based on the user's attached panel-based monitoring dashboard reference. This document is a build specification, not an implemented dashboard.
+Requested addition to App Watchtower, based on the user's attached panel-based monitoring dashboard reference. This document is the target build specification. An initial working subset is now implemented; see [implementation status](implementation.md) for exact features and remaining work.
 
-The user identified an `ISO` repository as the coding-guideline source. Searches with current GitHub access did not locate that repository, and `DevJel/ISO` was not accessible. Obtain the exact owner/repository URL and applicable guideline paths/version before runtime implementation. Do not infer that this repository name means ISO certification.
+The user identified an `ISO` repository as the coding-guideline source. Searches with current GitHub access did not locate that repository, and `DevJel/ISO` was not accessible. Obtain the exact owner/repository URL and applicable guideline paths/version for guideline review; initial implementation proceeded on the user's explicit request without claiming conformity. Do not infer that this repository name means ISO certification.
 
 ## Visual direction
 Preserve the reference's operational density: global search and time controls above a panel grid, with a full-width event table below. Replace TV-program metrics with application health, API performance, incidents, deployments, and AI usage. Do not copy the reference's unrelated map, tag cloud, or pie chart merely for resemblance.

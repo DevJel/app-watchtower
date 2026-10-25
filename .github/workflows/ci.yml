@@ -1,0 +1,37 @@
+name: Verify dashboard and API
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      WRANGLER_SEND_METRICS: "false"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run check
+      - run: npm test
+      - run: npm run test:integration
+      - run: npx playwright install --with-deps chromium
+      - name: Start local API (loopback development only)
+        run: |
+          cp .dev.vars.example .dev.vars
+          npm run db:local
+          npm run dev:api > /tmp/watchtower-api.log 2>&1 &
+          for attempt in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:8787/healthz >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - run: LIVE_API_TEST=1 npm run test:e2e
+      - run: npm audit --audit-level=moderate

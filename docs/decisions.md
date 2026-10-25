@@ -15,3 +15,9 @@
 | ADR-011 | Pending | One deployment path: GitHub Actions OR Cloudflare Git integration |
 
 Each accepted decision should record date, owner, alternatives, consequences, and verification evidence. None of these proposals represent a user-approved production configuration yet.
+
+## Implementation decisions
+- ADR-012: Implement the initial vertical slice as one TypeScript package/Worker with React/Vite static assets, D1 ingestion/snapshots and reported-check incidents. Defer service splitting, queues and independent probes until needed.
+- ADR-013: Use authenticated polling first, not SSE; preserve truthful freshness and missing-data states.
+- ADR-014: Implement on the user's explicit subsequent request while ISO source rules remain unavailable. Do not claim guideline conformity; reconcile when the exact repository/version is supplied.
+- ADR-015: No automatic production deployment. Cloudflare resources, Access policy, rate limits and recovery remain release gates.
